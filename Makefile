@@ -8,7 +8,7 @@ task1.1: main1_1.o hello_Ariel.o
 	$(CC) $(FLAGS) -o task1.1 main1_1.o hello_Ariel.o
 
 task1.2: main1_2.o mylib
-	$(CC) $(FLAGS) -o task1.2 main1_2.o ./libmylib.so
+	$(CC) $(FLAGS) -o task1.2 main1_2.o -L. -lmylib
 
 task1.3: main1_3.o
 	$(CC) $(FLAGS) -o $@ main1_3.o -ldl
@@ -35,4 +35,4 @@ mylib: hello_Ariel.o
 .PHONY: clean all
 
 clean:
-	rm -f task1.1 task1.2 *.o *.so
+	rm -f task1.1 task1.2 task1.3 *.o *.so
