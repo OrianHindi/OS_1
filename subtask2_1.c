@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-void imHERE(char* name){
-    for(int i = 0 ;i<30;++i){
-        printf("Im the %s process \n",name);
+void imHERE(char* name) {
+    for (int i = 0; i < 30; ++i) {
+        printf("Im the %s process \n", name);
         usleep(300000);
     }
+}
 
 int main(){
     pid_t pid = fork();

@@ -20,6 +20,6 @@ int main(){
    int result = clone(keepALive,process_stack+10000, CLONE_PARENT,0);
    printf("clone process result=%d",result);
    run("First");
-    return 1;
+    return 0;
 }
 
