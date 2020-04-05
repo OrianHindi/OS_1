@@ -10,7 +10,13 @@ void imHERE(char* name) {
 int main(){
     pid_t pid = fork();
     if(pid == 0){ //child is build
+        pid_t pid =fork();
+        if(pid == 0){
+            imHERE("grandChild");
+        }
+        else {
             imHERE("child");
+        }
     }
     else{
         imHERE("father");
