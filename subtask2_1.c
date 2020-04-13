@@ -12,7 +12,7 @@ int main(){
     if(pid == 0){ //child is build
         pid_t pid =fork();
         if(pid == 0){
-            imHERE("grandChild");
+            imHERE("grandChild"); //grandchild
         }
         else {
             imHERE("child");

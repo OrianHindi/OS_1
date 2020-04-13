@@ -14,8 +14,14 @@ void run (char * name){
     }
 
 }
+int daemonRun(void* none){
 
-int keepALive(){
+    char*  args[]={"./subtask2.3",NULL};
+    execvp(args[0],args);
+
+}
+
+int keepALive(void* none){
     char* args[]= {"./subtask2.2",NULL};
     execvp(args[0],args);
 }
@@ -24,21 +30,16 @@ int keepALive(){
 int main(){
     pid_t pid = fork();
     printf("pid is: %d",pid);
-    if(pid==0) {
+    if(pid==0) {  //child process
         char* args[] = {"./subtask2.1",NULL};
         int result = clone(keepALive,process_stack+10000, CLONE_PARENT,0);
         execvp(args[0],args);
-
     }
 
     else{
-        pid_t pid1 = fork();
-        if(pid1==0) {
-            char* args[] = {"./subtask2.3",NULL};
-            execvp(args[0], args);
-        }
+        int result2= clone(daemonRun,process_stack+10000,CLONE_PARENT,0);
         run("father");
     }
-
+//printf("%d , %d , %d",stdin,stdout,stderr);
     return 0;
 }

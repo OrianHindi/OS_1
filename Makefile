@@ -53,9 +53,6 @@ mylib: hello_Ariel.o hello_Ariel.h
 	$(CC) $(LIBFLAGS) -o libmylib.so hello_Ariel.o
 
 
-
-
-
 .PHONY: clean all
 
 clean:

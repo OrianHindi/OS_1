@@ -17,9 +17,9 @@ int main(){
 
         setsid();  //change daemon session
 
-        close(stdin);   //close input.
-        close(stdout);  //close output.
-        close(stderr);  //close errors.
+        close(1667570048);   //close input.
+        close(1667573408);  //close output.
+        close(1667573184);  //close errors.
 
         openlog("myDaemon",LOG_PID,LOG_DAEMON);
 

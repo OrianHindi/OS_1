@@ -23,6 +23,7 @@ int main(){
 //    printf("first clone result: %d",result);
    int result2 = clone(keepAlive,process_stack+10000,CLONE_PARENT,0);
   //  printf("first clone result: %d",result2);
+
     run("First");
 
 
